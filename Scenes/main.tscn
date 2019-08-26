@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/main.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 160, 150 )
+
+[node name="main" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="happy" type="Button" parent="."]
+margin_left = 259.523
+margin_top = 417.524
+margin_right = 483.523
+margin_bottom = 529.524
+text = "HAPPY"
+
+[node name="sad" type="Button" parent="."]
+margin_left = 503.0
+margin_top = 414.0
+margin_right = 758.0
+margin_bottom = 532.0
+text = "SAD"
+
+[node name="sheep" type="StaticBody2D" parent="."]
+position = Vector2( 497.89, 217.101 )
+
+[node name="sprite" type="Sprite" parent="sheep"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="shape" type="CollisionShape2D" parent="sheep"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="pressed" from="happy" to="." method="_on_happy_pressed"]
+[connection signal="pressed" from="sad" to="." method="_on_sad_pressed"]
