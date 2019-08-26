@@ -38,5 +38,13 @@ shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Button" type="Button" parent="."]
+margin_left = 880.0
+margin_top = 30.0
+margin_right = 970.0
+margin_bottom = 100.0
+text = "SAVE"
 [connection signal="pressed" from="happy" to="." method="_on_happy_pressed"]
 [connection signal="pressed" from="sad" to="." method="_on_sad_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
