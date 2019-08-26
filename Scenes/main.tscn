@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/main.gd" type="Script" id=1]
+[ext_resource path="res://Images/game_background.png" type="Texture" id=2]
+[ext_resource path="res://Images/white_square.png" type="Texture" id=3]
+[ext_resource path="res://Images/happy.png" type="Texture" id=4]
+[ext_resource path="res://Images/happy_pressed.png" type="Texture" id=5]
+[ext_resource path="res://Images/happy_mouse.png" type="Texture" id=6]
+[ext_resource path="res://Images/sad.png" type="Texture" id=7]
+[ext_resource path="res://Images/sad_pressed.png" type="Texture" id=8]
+[ext_resource path="res://Images/sad_mouse.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 160, 150 )
+extents = Vector2( 200, 200 )
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -11,22 +19,16 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="happy" type="Button" parent="."]
-margin_left = 259.523
-margin_top = 417.524
-margin_right = 483.523
-margin_bottom = 529.524
-text = "HAPPY"
-
-[node name="sad" type="Button" parent="."]
-margin_left = 503.0
-margin_top = 414.0
-margin_right = 758.0
-margin_bottom = 532.0
-text = "SAD"
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 2 )
 
 [node name="sheep" type="StaticBody2D" parent="."]
-position = Vector2( 497.89, 217.101 )
+position = Vector2( 640, 280 )
+
+[node name="background_img" type="Sprite" parent="sheep"]
+position = Vector2( -0.174316, -1.42419 )
+texture = ExtResource( 3 )
 
 [node name="sprite" type="Sprite" parent="sheep"]
 __meta__ = {
@@ -39,12 +41,24 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Button" type="Button" parent="."]
-margin_left = 880.0
-margin_top = 30.0
-margin_right = 970.0
-margin_bottom = 100.0
-text = "SAVE"
+[node name="happy" type="TextureButton" parent="."]
+margin_left = 461.184
+margin_top = 490.674
+margin_right = 606.184
+margin_bottom = 635.674
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+expand = true
+
+[node name="sad" type="TextureButton" parent="."]
+margin_left = 664.776
+margin_top = 492.961
+margin_right = 811.776
+margin_bottom = 639.961
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+expand = true
 [connection signal="pressed" from="happy" to="." method="_on_happy_pressed"]
 [connection signal="pressed" from="sad" to="." method="_on_sad_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

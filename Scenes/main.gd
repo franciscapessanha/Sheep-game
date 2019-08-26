@@ -37,7 +37,12 @@ func change_image():
 	i_image = randi() % len(folder)
 	image = folder[i_image]
 	sheep.set_texture(load('res://Images/' + str(i) + '/' + image))
-	
+	var i_s = load('res://Images/' + str(i) + '/' + image).get_size() #image size
+	print('i_s: ', i_s)
+	var th = 150 #target height
+	var tw = 150 #target width
+	var scale = Vector2((i_s.x/(i_s.x/tw)/100), (i_s.y/(i_s.y/th)/100))
+	sheep.set_scale(scale)
 	
 func _ready():
 	pain = list_files_in_directory('res://Images/1')
