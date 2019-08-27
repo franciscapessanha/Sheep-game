@@ -1,0 +1,5 @@
+day/month,time,image name,given score,ground truth
+27/8,14_8_8,0_0_CIMG4963.png,0,1
+27/8,14_8_9,0_0_CIMG5193.png,0,1
+27/8,14_8_10,0_2_CIMG5993.png,0,0
+27/8,14_8_11,0_0_CIMG4876.png,0,1
