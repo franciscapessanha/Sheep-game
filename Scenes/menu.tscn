@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/menu.gd" type="Script" id=1]
 [ext_resource path="res://Images/menu_background.png" type="Texture" id=2]
 [ext_resource path="res://Images/play.png" type="Texture" id=3]
 [ext_resource path="res://Images/play_selected.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/Action-Man/Action_Man_Extended_Bold.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 5 )
 
 [node name="menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,10 +21,25 @@ texture = ExtResource( 2 )
 [node name="play" type="TextureButton" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 480.0
-margin_top = 200.0
-margin_right = 840.0
-margin_bottom = 269.0
+margin_left = 530.0
+margin_top = 320.0
+margin_right = 791.0
+margin_bottom = 370.0
 texture_normal = ExtResource( 3 )
 texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 50.0
+margin_top = 120.0
+margin_right = 1220.0
+margin_bottom = 282.0
+rect_pivot_offset = Vector2( 570, 320 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.203922, 0.427451, 0.737255, 1 )
+text = "Animals Affect: can you read sheep facial expressions?"
+align = 1
+autowrap = true
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]

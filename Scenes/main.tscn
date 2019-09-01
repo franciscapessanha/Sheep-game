@@ -1,14 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://Images/game_background.png" type="Texture" id=2]
 [ext_resource path="res://Images/white_square.png" type="Texture" id=3]
 [ext_resource path="res://Images/happy.png" type="Texture" id=4]
-[ext_resource path="res://Images/happy_pressed.png" type="Texture" id=5]
-[ext_resource path="res://Images/happy_mouse.png" type="Texture" id=6]
-[ext_resource path="res://Images/sad.png" type="Texture" id=7]
-[ext_resource path="res://Images/sad_pressed.png" type="Texture" id=8]
-[ext_resource path="res://Images/sad_mouse.png" type="Texture" id=9]
+[ext_resource path="res://Images/happy_mouse.png" type="Texture" id=5]
+[ext_resource path="res://Images/sad.png" type="Texture" id=6]
+[ext_resource path="res://Images/sad_mouse.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 200, 200 )
@@ -47,8 +45,7 @@ margin_top = 490.674
 margin_right = 606.184
 margin_bottom = 635.674
 texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 6 )
+texture_hover = ExtResource( 5 )
 expand = true
 
 [node name="sad" type="TextureButton" parent="."]
@@ -56,9 +53,8 @@ margin_left = 664.776
 margin_top = 492.961
 margin_right = 811.776
 margin_bottom = 639.961
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
 expand = true
 [connection signal="pressed" from="happy" to="." method="_on_happy_pressed"]
 [connection signal="pressed" from="sad" to="." method="_on_sad_pressed"]

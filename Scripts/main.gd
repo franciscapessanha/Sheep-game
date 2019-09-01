@@ -14,6 +14,8 @@ onready var hour_min_sec
 onready var day
 onready var TOTAL_SHEEP = 10
 onready var n = 1
+onready var n_pain = 5
+onready var n_no_pain = 5
 
 func list_files_in_directory(path):
     var files = []
@@ -32,11 +34,19 @@ func list_files_in_directory(path):
     return files
 	
 func change_image():
-	i = randi() % 2
+	if n_pain != 0 and n_no_pain != 0:
+		i = randi() % 2
+	elif n_no_pain == 0:
+		i = 1
+	elif n_pain == 0:
+		i = 0
+		
 	if i == 0:
 		folder = no_pain
+		n_no_pain -= 1
 	else:
 		folder = pain
+		n_pain -= 1
 		
 	label = i
 	i_image = randi() % len(folder)
@@ -78,11 +88,12 @@ func _on_happy_pressed():
 	day = str(t.day)
 	var day_month = str(t.day) + '/' + str(t.month) 
 	hour_min_sec = str(t.hour) + '_' + str(t.minute) + '_' + str(t.second)
-	data[hour_min_sec] = [day_month, hour_min_sec, image, 0, label]
+	data[n] = [day_month, hour_min_sec, image, 0, label]
 	if n < TOTAL_SHEEP:
 		change_image()
 		n += 1
 	else:
+		print('data: ', data)
 		save()
 		end()
 
@@ -94,12 +105,13 @@ func _on_sad_pressed():
 	day = str(t.day)
 	var day_month = str(t.day) + '/' + str(t.month) 
 	hour_min_sec = str(t.hour) + '_' + str(t.minute) + '_' + str(t.second)
-	data[hour_min_sec] = [day_month, hour_min_sec, image, 0, label]
+	data[n] = [day_month, hour_min_sec, image, 0, label]
 	
 	if n < TOTAL_SHEEP:
 		change_image()
 		n += 1
 	else:
+		print('data: ', data)
 		save()
 		end()
 	
