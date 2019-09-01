@@ -51,10 +51,13 @@ func change_image():
 	label = i
 	i_image = randi() % len(folder)
 	image = folder[i_image]
+	print('before folder len:', len(folder)) 
+	folder.erase(folder[i_image])
+	print('after folder len:', len(folder)) 
 	sheep.set_texture(load('res://Images/' + str(i) + '/' + image))
 	var i_s = load('res://Images/' + str(i) + '/' + image).get_size() #image size
-	var th = 150 #target height
-	var tw = 150 #target width
+	var th = 75 #target height
+	var tw = 75 #target width
 	var scale = Vector2((i_s.x/(i_s.x/tw)/100), (i_s.y/(i_s.y/th)/100))
 	sheep.set_scale(scale)
 	

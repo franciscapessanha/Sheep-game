@@ -25,7 +25,6 @@ texture = ExtResource( 2 )
 position = Vector2( 640, 280 )
 
 [node name="background_img" type="Sprite" parent="sheep"]
-position = Vector2( -0.174316, -1.42419 )
 texture = ExtResource( 3 )
 
 [node name="sprite" type="Sprite" parent="sheep"]
