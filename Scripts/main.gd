@@ -108,11 +108,12 @@ func _on_sad_pressed():
 	day = str(t.day)
 	var day_month = str(t.day) + '/' + str(t.month) 
 	hour_min_sec = str(t.hour) + '_' + str(t.minute) + '_' + str(t.second)
-	data[n] = [day_month, hour_min_sec, image, 0, label]
+	data[n] = [day_month, hour_min_sec, image, 1, label]
 	
 	if n < TOTAL_SHEEP:
 		change_image()
 		n += 1
+		
 	else:
 		print('data: ', data)
 		save()
