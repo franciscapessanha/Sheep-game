@@ -73,6 +73,7 @@ func save():
 	file.close()
 		
 func _ready():
+	randomize()
 	pain = list_files_in_directory('res://Images/1')
 	no_pain = list_files_in_directory('res://Images/0')
 	change_image()
