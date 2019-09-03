@@ -1,4 +1,4 @@
-# Animals Affect: Can you read sheep facial expressions? We build algorithms that can
+# Animals Affect: Can you read sheep facial expressions? We build algorithms that can!
 
 " Animals in pain do show reliable, if at times, very subtle signs of distress. A recently developed Sheep Pain Facial Expression Scale (SPFES) can help handlers accurately and objectively determine the degree of pain an animal is experiencing." Can you identify the signs?
 
