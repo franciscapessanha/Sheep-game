@@ -12,6 +12,8 @@ onready var data = {}
 onready var sheep = get_node('sheep').get_node('sprite')
 onready var hour_min_sec 
 onready var day
+onready var month
+onready var year
 onready var TOTAL_SHEEP = 10
 onready var n = 1
 onready var n_pain = 5
@@ -63,8 +65,8 @@ func change_image():
 	
 func save():
 	var file = File.new()
-	file.open('res://Data/data_' + day + '_' + hour_min_sec + '.csv', file.WRITE)
-	file.store_csv_line(['day/month', 'time', 'image name', 'given score', 'ground truth'], ',')
+	file.open('res://Data/' + day + '_' + month + '_' + year + '_' + hour_min_sec + '.csv', file.WRITE)
+	file.store_csv_line(['day/month/year', 'time', 'image name', 'given score', 'ground truth'], ',')
 	for i in data:
 		var line = data[i]
 		file.store_csv_line(line, ',')
@@ -89,7 +91,9 @@ func _on_happy_pressed():
 		score += 1 
 	var t = OS.get_datetime()
 	day = str(t.day)
-	var day_month = str(t.day) + '/' + str(t.month) 
+	month = str(t.month)
+	year = str(t.year)
+	var day_month = str(t.day) + '/' + str(t.month) + '/' + str(t.year)
 	hour_min_sec = str(t.hour) + '_' + str(t.minute) + '_' + str(t.second)
 	data[n] = [day_month, hour_min_sec, image, 0, label]
 	if n < TOTAL_SHEEP:
@@ -106,7 +110,9 @@ func _on_sad_pressed():
 		score += 1 
 	var t = OS.get_datetime()
 	day = str(t.day)
-	var day_month = str(t.day) + '/' + str(t.month) 
+	month = str(t.month)
+	year = str(t.year)
+	var day_month = str(t.day) + '/' + str(t.month) + '/' + str(t.year)
 	hour_min_sec = str(t.hour) + '_' + str(t.minute) + '_' + str(t.second)
 	data[n] = [day_month, hour_min_sec, image, 1, label]
 	
